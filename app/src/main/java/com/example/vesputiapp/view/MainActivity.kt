@@ -2,11 +2,11 @@ package com.example.vesputiapp.view
 
 import android.content.Context
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -23,7 +23,7 @@ import com.mapbox.mapboxsdk.maps.Style
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.ArrayList
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -90,16 +90,17 @@ class MainActivity : AppCompatActivity() {
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                if(bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED){
-                    bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-                }
-                else {
-                    bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-                }
+
             }
 
             override fun onStateChanged(bottomSheet: View, newState: Int) {
-
+                when (newState) {
+                    BottomSheetBehavior.STATE_HIDDEN -> {
+                    }
+                    BottomSheetBehavior.STATE_EXPANDED -> {
+                        bottom_sheet_arrow.setImageResource(R.drawable.icn_chevron_down)
+                    }
+                }
             }
 
         })
@@ -115,10 +116,18 @@ class MainActivity : AppCompatActivity() {
             mapView?.visibility = View.VISIBLE
         }
 
+        bottom_sheet_arrow.setOnClickListener(View.OnClickListener {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        })
+
 
         setObservers()
 
         viewModel.getItems(SIMPLE_POI)
+    }
+
+    private fun hideBottomSheet() {
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
     }
 
     private fun setObservers() {
