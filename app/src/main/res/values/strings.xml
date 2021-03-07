@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">VesputiApp</string>
+    <string name="mapBoxToken">pk.eyJ1Ijoibmljb2xhc3NpbWVvbmUiLCJhIjoiY2tseHFvajZpMDE3cjJ3cTc3eDZlZHh1ayJ9.OH5iXiiow8u8JV7wKSoXUA</string>
+    <string name="loading">Loading</string>
+    <string name="title">Title</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="description">Description</string>
+    <string name="try_again">Try Again</string>
+    <string name="no_internet_connection">Not Internet Connection</string>
+    <string name="seems_like_you">it seems you dont have connection</string>
+    <string name="token">pk.eyJ1Ijoibmljb2xhc3NpbWVvbmUiLCJhIjoiY2tseHFvajZpMDE3cjJ3cTc3eDZlZHh1ayJ9.OH5iXiiow8u8JV7wKSoXUA</string>
+    <string name="tv_description">A BottomSheet is a component that is used to display some information by sliding the view up in the screen and also you can hide this BottomSheet when the message is conveyed to the users. This is a nice way of conveying some message or performing some task in Android. Types</string>
+    <string name="dandelion_chocolate">Dandelion Chocolate</string>
+    <string name="_4_7">4.7</string>
+    <string name="_51">(51)</string>
+    <string name="_12_min_away">12 min away</string>
+    <string name="_740_valencia_st_san_fracisco_ca">740 Valencia St, San Fracisco, CA</string>
+    <string name="_415_349_0942">(415) 349-0942</string>
+    <string name="wed_10_am_9_pm">Wed, 10 AM - 9 PM</string>
+    <string name="proceed_payment">PROCEED PAYMENT</string>
+</resources>
